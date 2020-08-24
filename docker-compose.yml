@@ -2,7 +2,7 @@ version: "3"
 services:
   nginx-snowplow:
     build:
-      context: ./
+      context: ./nginx/
       dockerfile: Dockerfile
     image: nginx-snowplow:latest
     container_name: nginx-snowplow
@@ -11,3 +11,5 @@ services:
     ports:
       - "80:80"
       - "443:443"
+    volumes:
+      - ./log/nginx:/var/log/snowplow
