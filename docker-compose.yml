@@ -1,8 +1,11 @@
 version: "3"
 services:
-  nginx-snoplow:
-    image: nginx-snoplow:latest
-    container_name: nginx-snoplow
+  nginx-snowplow:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: nginx-snowplow:latest
+    container_name: nginx-snowplow
     restart: unless-stopped
     tty: true
     ports:
