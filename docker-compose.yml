@@ -1,1 +1,10 @@
 version: "3"
+services:
+  nginx-snoplow:
+    image: nginx-snoplow:latest
+    container_name: nginx-snoplow
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
